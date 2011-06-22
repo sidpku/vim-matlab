@@ -17,7 +17,7 @@ endif
 
 syn keyword matlabStatement		return function
 syn keyword matlabConditional		switch case else elseif end if otherwise break continue
-syn keyword matlabRepeat		do for while
+syn keyword matlabRepeat		do for while parfor spmd
 syn keyword matlabStorageClass		classdef methods properties events persistent global
 syn keyword matlabExceptions		try catch rethrow throw
 
@@ -273,7 +273,7 @@ syn keyword matlabFunc isvalid start startat stop timer timerfind timerfindall w
 "Variables and Functions in Memory
 syn keyword matlabFunc assignin datatipinfo genvarname isglobal memory mislocked mlock munlock pack
 "Control Flow
-syn keyword matlabFunc parfor
+" syn keyword matlabFunc parfor
 "Error Handling
 syn keyword matlabFunc addCause error ferror getReport last lasterr lasterror lastwarn warning
 "Classes and Objects
