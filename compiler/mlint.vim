@@ -18,27 +18,32 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>
 endif
 
+" pipe through sed to prepend filename:
+CompilerSet makeprg=mlint\ -id\ %\ \\\|&\ sed\ 's/^/%:/'
+
+" errorformat originally from syntastic
+CompilerSet errorformat=
+      \%f:L\ %l\ (C\ %c):\ %*[a-zA-Z0-9]:\ %m,
+      \%f:L\ %l\ (C\ %c-%*[0-9]):\ %*[a-zA-Z0-9]:\ %m
+
+
 " mlint doesn't provide filename information except if multiple
 " filenames are given 
 " With the following command :
-" mlint <filename> <filename without extension>
+" mlint <filename>
 " mlint produces an output like that :
 " ========== <filename> ==========
 " L x (C y): ID : Message
 " L x (C y): ID : Message
 " ..
-" ..
-" ========== <filename without extension> ==========
-" L 0 (C 0): MDOTM :Filename 'filename' must end in .m or .M
 "
-" The filename can then be parsed
-CompilerSet makeprg=mlint\ -id\ %\ %< 
 
-CompilerSet errorformat=
-      \%-P==========\ %f\ ==========,
-      \%-G%>==========\ %s\ ==========,
-      \%-G%>L\ %l\ (C\ %c):\ MDOTM%m,
-      \L\ %l\ (C\ %c):\ %m,
-      \L\ %l\ (C\ %c-%*[0-9]):\ %m,
-      \%-Q
+" CompilerSet errorformat=
+"       \%-P==========\ %f\ ==========,
+"       \%-G%>==========\ %s\ ==========,
+"       \%-G%>L\ %l\ (C\ %c):\ MDOTM%m,
+"       \L\ %l\ (C\ %c):\ %m,
+"       \L\ %l\ (C\ %c-%*[0-9]):\ %m,
+"       \%-Q
+
 
