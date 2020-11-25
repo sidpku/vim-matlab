@@ -66,7 +66,7 @@ function GetMatlabIndent()
   endif
   " Add a 'shiftwidth' after classdef, properties, switch, methods, events,
   " function, if, while, for, otherwise, case, try, catch, else, elseif
-  if getline(plnum) =~ '^\s*\(classdef\|properties\|switch\|methods\|events\|function\|if\|while\|for\|parfor\|otherwise\|case\|try\|catch\|else\|elseif\)\>'
+  if getline(plnum) =~ '^\s*\(classdef\|properties\|switch\|methods\|events\|function\|if\|while\|for\|parfor\|otherwise\|case\|try\|catch\|else\|elseif\|arguments\)\>'
     let curind = curind + &sw
     " In Matlab we have different kind of functions
     " - the main function (the function with the same name than the filename)

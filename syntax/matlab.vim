@@ -15,7 +15,7 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-syn keyword matlabStatement		return function
+syn keyword matlabStatement		return function arguments
 syn keyword matlabConditional		switch case else elseif end if otherwise break continue
 syn keyword matlabRepeat		do for while parfor spmd
 syn keyword matlabStorageClass		classdef methods properties events persistent global
