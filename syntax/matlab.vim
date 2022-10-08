@@ -5,6 +5,7 @@
 " Last Change:	2008 Oct 16 : added try/catch/rethrow and class statements
 " 		2008 Oct 28 : added highlighting for most of Matlab functions
 " 		2009 Nov 23 : added 'todo' keyword in the matlabTodo keywords
+" 		2022 Oct 08 : added 'enumeration' as a matlabStorageClass
 " 		(for doxygen support)
 
 " For version 5.x: Clear all syntax items
@@ -18,7 +19,7 @@ endif
 syn keyword matlabStatement		return function arguments
 syn keyword matlabConditional		switch case else elseif end if otherwise break continue
 syn keyword matlabRepeat		do for while parfor spmd
-syn keyword matlabStorageClass		classdef methods properties events persistent global
+syn keyword matlabStorageClass		classdef methods properties events persistent global enumeration
 syn keyword matlabExceptions		try catch rethrow throw
 
 syn keyword matlabTodo			contained  TODO NOTE FIXME XXX
