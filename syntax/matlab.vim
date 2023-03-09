@@ -309,6 +309,16 @@ syn keyword matlabFunc hdf hdf5 hdf5info hdf5read hdf5write hdfinfo hdfread hdft
 "Band-Interleaved Data
 syn keyword matlabFunc multibandread multibandwrite
 
+" custom function 
+" new function added to matlab
+syn keyword matlabFunc coefTest fitlm
+syn keyword matlabFunc scatterhist colorbar colormap caxis xlim caxis
+syn keyword matlabFunc geoshow axesm makesymbolspec geographicToDiscrete
+syn keyword matlabFunc readtable table2struct
+syn keyword matlabFunc datetime
+syn keyword matlabFunc brewermap
+syn keyword matlabFunc categorical
+
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
